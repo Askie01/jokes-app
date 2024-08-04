@@ -9,12 +9,12 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 @Data
 @Controller
-@RequestMapping("/")
+@RequestMapping("jokes")
 public class JokeController {
 
     private final JokeService jokeService;
 
-    @GetMapping("showJoke")
+    @GetMapping("joke")
     public String showJoke(Model model) {
         model.addAttribute("joke", jokeService.getJoke());
         return "index";
